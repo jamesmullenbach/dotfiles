@@ -1,0 +1,126 @@
+The awk variable $1 contains the first field in a record, $2 the second, $3 the third, etc. $0 contains all fields.
+Suggestion: Review your dot files periodically. You might be reminded of a feature, see something you can improve, get a new idea, ...
+All Emacs rectangle commands are of the form C-x r {letter} c - clear d - delete k - kill y - yank o - fill with spaces t - fill with string
+Hexadecimal dump of a file: od -x <file>
+The sed command r inserts a file. For example, insert foo.h after 'INCLUDE': sed '/INCLUDE/ r foo.h'
+tail -F will monitor a file, such as a log file, until you type Ctrl-c.
+Awk script to count the number of words in a file: awk '{ total = total + NF }; END { print total+0 }'
+In bash, cd - takes you back to your previous directory.
+chmod +x marks a file as executable
+Print only the lines that are 65 characters in length or longer: awk 'length > 64'
+"Emacs comes from an alternate universe of stable, backwards-compatible, extensible software." -- Erik Hetzner
+Shell scripts run in their own subshell, so a cd in a script effects only the subshell. To script a cd, use an alias instead.
+xdg-open will open a file from the commandline using the application associated with its file extension.
+"The mouse is a clumsy instrument, and Emacs gurus consider it a cache miss when they have to resort to using it." -- Steve Yegge
+The sed command p prints. For example, print lines 3 through 7 of a file: sed -n '3,7p' somefile
+sort a file based on the 3rd field in each line: sort -k 3. Fields separated by white space.
+"Pointing and clicking does not scale."
+This description from the w3 site speaks volumes: "fully customizable, largely undocumented ..."
+In awk jargon, each line of a file is a record. You can change the way awk splits files into records, but by default it splits on newlines.
+To do a search by file names using find, -name is case-sensitive and -iname is case-insensitive.
+sort -c doesn't sort but checks whether a file is sorted, reporting first exception if not sorted.
+The option -E or --ignore-tab-expansion tells diff to ignore the distinction between tabs and spaces.
+To increase productivity, it's more important to minimize context switches than to minimize keystrokes.
+List files containing a match for a regular expression: grep -l
+If you only want to know whether two files differ, not how they differ, use diff -q (or --brief).
+diff -e produces an ed program. ed is the ancestor of sed.
+delete from line 3 up to and including first blank line: sed 3,/^$/d filename
+Split a text file into files with 50 lines each: split --lines=50 foo.txt
+Split a binary file into megabyte chucks: split -b1m binaryfile
+sed command to delete the last line of a file: $d
+List only subdirectories of the current directory: ls -d */
+Just saw a sports car with license plate SUDO MV.
+Make directories more than one level deep in one command: mkdir -p foo/bar
+Show which lines are repeated in a sorted file: uniq -d
+"You have more tools, supplies and materials for the road ahead than you have road ahead. Finish something." -- Cool Tools
+wc returns the number of lines, words, and bytes in a file. Can use -l, -w, -c to get just one of these.
+To search for directories with find, specify -type d. To search for files, specify -type f.
+cp - u will only copy files that don't exist, or are newer than their existing counterparts, in the destination directory.
+Stuart Feldman wrote the first makefile in 1977. All makefiles since have started by copying a previous one, in unbroken succession.
+'Don't ever, ever plan a backup strategy. Plan a restore strategy.' -- Paul Randal
+By default, the head command shows the first 10 lines of a file. Can be modified using -n followed by the number of lines to show.
+“There are two major products that came from Berkeley: LSD and Unix. We don’t believe this to be a coincidence.” – Jeremy S. Anderson.
+You can find the dimensions of a png image using the file command, e.g. file foo.png.
+One way to practice sed commands is to pipe echo out. Example: echo 'hello world' | sed s/world/orb/
+Search man pages for a given string: man -k string
+Awk can use a pair of regular expressions as a range, just like sed. In both languages, /foo/,/bar/ matches the same lines.
+"sort | uniq" must be one of the most common pipleline pairs
+Can install GNU versions of Unix utilities on Mac with homebrew: brew install coreutils GNU versions will have a 'g' prefix, e.g. gdate.
+'The enjoyment of one's tools is an essential ingredient of successful work.' -- Donald E. Knuth
+“I use Emacs, which might be thought of as a thermonuclear word processor.” — Neal Stephenson
+Sort a file in case-insensitive order: sort -f. 'f' for 'fold,' i.e. fold upper and lower case together
+Shell scripts run in their own subshell, so a cd in a script only effects the subshell. To script a cd, use an alias instead.
+"Unix was not designed to stop its users from doing stupid things, as that would also stop them from doing clever things." -- Doug Gwyn
+Open a dialog in OSX Finder to enter a path: Command-Shift-G
+Create a directory and change into it: mkdir dir && cd $_
+wc -L shows the length of the longest line in a file.
+The name of the less utility is a pun on “less is more.”
+If you only need to know the number of lines in a large file, wc -l is much faster than wc.
+The substitute command in sed can take a 'w' option to specify an output file. e.g. sed s/foo/bar/w myfile.
+hunspell -H will check the spelling of an HTML file
+Change the third 'apple' in each record to 'orange': sed 's/apple/orange/3' somefile
+Show tabs in a file: cat -T
+"Controlling complexity is the essence of computer programming." -- Brian Kernighan
+Print the first seven lines of a file using sed: sed 7q <file>.
+Capitalize all vowels in a file: sed 'y/aeiou/AEIOU/' somefile
+'Unix is user-friendly; it's just picky about who its friends are.'
+cp -u will only copy files that don't exist, or are newer than their existing counterparts, in the destination directory.
+Combine multiple consecutive blank lines into one: cat -s
+gzip compresses, gunzip decompresses. gunzip is the same as gzip -d.
+'It is easier to port a shell than a shell script.' -- Larry Wall
+In bash, !^ expands to 2nd word of previous command.
+'For almost every purpose, shell functions are preferred over aliases.' -- Bash Reference Manual
+Take every 10th line from a file: awk '!(NR % 10)' file
+The name 'awk' comes from the initials of its creators: Aho, Weinberger, and Kernighan
+A couple useful Emacs commands: C-x + Make all windows the same height C-x - Make window no taller than necessary to show its content
+Aliases to avoid accidentally typing a comma when moving up directories: alias up="cd .." alias upp="cd ../.." alias uppp="cd ../../.."
+How people think they use Unix pipes: program1 | program2 How they really do: program1 | lots of ugly text munging | program2
+Jason Cannon's 'Command Line Kung Fu' is a nice little book.
+Having to use the mouse is a cache miss for a command line wizard. Having to use the keyboard is a cache miss for most consumers.
+Perl has a utility a2p to convert awk scripts into perl scripts.
+Change 'lead' to 'gold' everywhere: sed 's/lead/gold/g' somefile
+The command line utility "join" acts like a simple SQL join for text files.
+In bash, $^ expands to 2nd word of previous command.
+In bash, !$ expands to last word of previous command.
+Using git, add and commit all modified files in one command: git commit -a -m 'commit message'
+Human-readable path: echo $ PATH | tr ':' '\ n'
+ls -X will group files by extension.
+mv -i moves files, asking for confirmation before overwriting an existing file.
+Show line endings in a file: cat -E
+Trim leading whitespace: sed -i 's/^[ \t]*//' somefile
+“A hacker does for love what others would not do for money.” -- /usr/games/fortune
+The GNU version of date lets you do things like the following: date -d "today + 90 days"
+Rename foo.old to foo.new: mv foo.{old,new}
+sdiff shows diff output side-by-side.
+Gnu sed allows addresses of the form start~step. For example, 1~2 matches odd-numbered lines.
+wc has options to only show character (-c), word (-w), or line (-l) counts.
+"If you cannot think of three ways of abusing a tool, you do not understand how to use it." -- Gerald Weinberg
+The -i option causes sed to edit a file in place.
+Count the number of lines matching regex in each file: grep -c
+In bash, !?foo will repeat the most recent command that contained the string 'foo'.
+diff3 compares three files line by line.
+That awkward moment when you type Emacs commands into another app and it stares at you blankly.
+In bash, $^ expands to 2nd word of previous command. Example: head very_long_file_name; tail !^
+Bare minimum git for personal use: add, commit, push, and pull. Look up anything else as needed.
+Display a file with line numbers: cat -n or nl.
+Delete blank lines: awk NF
+"I use emacs, which might be thought of as a thermonuclear word processor." -- Neal Stephenson
+The utility 'file' reports a file's type. With the option -z it will try to look inside zipped files.
+Passwords are like French fries: better with salt.
+'If you had done something twice, you are likely to do it again.' -- Brian Kernighan and Bob Pike
+First pass at an American to British English conversion program: s/o/ou/g Needs a little more work.
+Have the last word: !$
+"Don’t ever, ever plan a backup strategy. Plan a restore strategy." -- Paul Randal
+'A successful software tool is one that was used to do something undreamed of by its author.' -- Stephen Johnson
+Trim leading and trailing whitespace: sed -i 's/^[ \t]*//;s/[ \t]*$//' somefile
+Current UTC time: date -u
+Output a file, displaying non-printing characters: cat -v
+Recursively search all C files (Gnu grep): grep -r --include "*.c" "pattern"
+We shape our tools and then our tools shape us. — John M. Culkin
+sed script to delete blank lines /^$/d
+Maybe try not using some of your aliases and scripts once in a while so you can remember what they do.
+In bash, ^foo^bar repeats the latest command, replacing the first instance of 'foo' with 'bar'.
+Day of the year: date +'%j'
+"Now that’s an oxymoron, a graphical user interface for Unix." -- Donald A. Norman
+List files in descending order of size: ls -S
+sudo is basically the "Mother may I?" of working at the shell.
