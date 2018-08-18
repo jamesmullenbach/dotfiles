@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/jamesm'
+let g:netrw_dirhist_2='/home/jamesm/commonsense-part-whole/data/nouns'
+let g:netrw_dirhist_3='/home/jamesm/commonsense-part-whole/data/gutenberg/www.gutenberg.org/robot'
+let g:netrw_dirhist_4='/home/jamesm/.vim/plugged/palenight.vim'
